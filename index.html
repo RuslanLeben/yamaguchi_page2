@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>2 макет</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- шрифты -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="yamaguchi">Yamaguchi<br>Voice Control</div>
+		<div class="descript">
+			<p>Вы можете управлять программами массажа или самим креслом с помощью голосовых команд, приведённых ниже. Коснитесь кратковременно кнопки голосового управления, расположенной на левом подлокотнике, для запуска сеанса голосового управления.</p><br><p>Произнесите одну из доступных команд. Если произнесённая команда распознана, вы услышите ответ и кресло приступит к выполнению запроса.</p>
+		</div>
+		<div class="girl">
+			<img src="girl.png" class="animation-block">
+			<div class="circle" style="z-index: -1;" id="circle-1">
+				<div class="back-circle"></div>
+				<div class="front-circle" style="visibility: hidden;"></div>
+			</div>
+			<div class="circle" id="circle-2">
+				<div class="back-circle" style="visibility: hidden;"></div>
+				<div class="front-circle"></div>
+			</div>
+		</div>
+		<div class="phone">
+			<img src="phone.png" width="100%">
+		</div>
+		<div class="sayokey">
+			<div class="text-wrapper">
+				<p>СКАЖИ:</p><p>«ОКЕЙ, ЯМАГУЧИ»</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function() 
+		{
+			const girlElement = document.querySelector(".animation-block");
+			const holeElement1 = document.getElementById("circle-1");
+			const holeElement2 = document.getElementById("circle-2");
+			girlElement.addEventListener("animationend", function() 
+			{
+				girlElement.style.animation = "levitateAnimation 2s ease-in-out infinite alternate";
+			});
+			holeElement1.addEventListener("animationend", function() 
+			{
+				holeElement1.style.display = "none";
+				holeElement2.style.display = "none";
+			});
+		});
+	</script>
+</body>
+</html>

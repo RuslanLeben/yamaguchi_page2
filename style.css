@@ -1,0 +1,266 @@
+*
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+}
+
+body
+{
+	background: url(pattern.jpg);
+	background-size: 20px 20px;
+	height: 100vh;
+}
+
+.wrapper
+{
+	overflow: hidden;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 7fr 5fr 9fr;
+	grid-template-rows: 1fr 2fr 1fr;
+
+	grid-template-areas:
+    "yamaguchi girl phone"
+    "descript girl phone"
+    "sayokey girl phone";
+}
+
+.yamaguchi
+{
+	grid-area: yamaguchi;
+	font-size: 42px;
+}
+
+.descript
+{
+	grid-area: descript;
+	line-height: 32px;
+}
+
+.sayokey
+{
+	font-weight: 600;
+	grid-area: sayokey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.text-wrapper 
+{
+	width: 100%;
+}
+
+.text-wrapper p:nth-child(1)
+{
+	font-size: 28px;
+}
+.text-wrapper p:nth-child(2)
+{
+	text-align: center;
+	font-size: 36px;
+}
+
+.girl
+{
+	position: relative;
+	grid-area: girl;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.animation-block
+{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	position: absolute;
+	animation: beginAnimation 2s;
+}
+
+.phone
+{
+	grid-area: phone;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/*ПОЛУКРУГИ*/
+.circle
+{
+	bottom: 0;
+	position: absolute;
+	animation: holeAnimation 2s ease-in-out;
+}
+.front-circle
+{
+	position: relative;
+	background: black;
+	width: 100px;
+	height: 50px;
+	border-radius: 0 0 50px 50px; 
+}
+.back-circle
+{
+	position: relative;
+	background: black;
+	width: 100px;
+	height: 50px;
+	border-radius: 50px 50px 0 0; 
+}
+
+/*АНИМАЦИЯ*/
+@keyframes beginAnimation 
+{
+	0% 
+	{
+		transform: translate(-50%, 100%);
+	}
+	100% 
+	{
+		transform: translate(-50%,-55%);
+	}
+}
+
+@keyframes levitateAnimation 
+{
+	0% 
+	{
+		transform: translate(-50%,-55%);
+	}
+	100% 
+	{
+		transform: translate(-50%,-45%);
+	}
+}
+
+@keyframes holeAnimation 
+{
+	0%, 100%
+	{
+		transform: scale(0) rotateX(70deg)
+	}
+	50% 
+	{
+		transform: scale(3.0) rotateX(70deg)
+	}
+}
+
+
+@media (max-width: 900px) 
+{
+	.wrapper
+	{
+		overflow: auto;
+		grid-template-columns: 1fr; 
+		grid-template-rows: auto; 
+		grid-template-areas:
+		"yamaguchi"
+		"descript"
+		"girl"
+		"phone"
+		"sayokey";
+	}
+	.yamaguchi
+	{
+		font-size: 34px;
+	}
+	.descript
+	{
+		font-size: 16px;
+	}
+	.girl
+	{
+		height: 150vh;
+	}
+
+	.text-wrapper p:nth-child(1)
+	{
+		font-size: 38px;
+	}
+	.text-wrapper p:nth-child(2)
+	{
+		line-height: 1em;
+		font-size: 62px;
+		text-align: left;
+	}
+}
+
+@media (max-width: 720px) 
+{
+	.girl
+	{
+		height: 120vh;
+	}
+}
+
+@media (max-width: 594px) 
+{
+	.girl
+	{
+		height: 100vh;
+	}
+}
+
+@media (max-width: 413px) 
+{
+	.girl
+	{
+		height: 70vh;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
